@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <button class="nav-btn" id="profile-btn" onclick="showProfile()">Profile</button>
+        <button class="nav-btn" id="home-btn" onclick="showHome()">Home</button>
+        <button class="nav-btn" id="notifications-btn" onclick="showNotifications()">Notifications</button>
+    </div>
+
+    <div id="profile-section" class="section hidden">
+        <div class="profile">
+            <div class="profile-header">
+                <img src="img.jpg" alt="Profile Picture" class="profile-picture">
+                <div class="profile-info">
+                    <h1 class="profile-name">Mohit Patil</h1>
+                    <p class="profile-bio">Web Developer</p>
+                    <div class="profile-stats">
+                        <span>Posts: 10</span>
+                        <span>Followers: <span id="followers-count">500</span></span>
+                        <span>Following: 150</span>
+                    </div>
+                    <button class="follow-btn" onclick="toggleFollow()">Follow</button>
+                </div>
+            </div>
+            <div class="profile-posts-grid">
+                <!-- Posts will be added dynamically here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="home-section" class="section visible">
+        <div class="posts">
+            <!-- Example Post 1 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="img.jpg" alt="User" class="post-user-picture" onclick="showProfile()">
+                    <span class="post-user-name" onclick="showProfile()">Mohit Patil</span>
+                </div>
+                <img src="img5.jpg" alt="Post Image" class="post-image">
+                <div class="post-actions">
+                    <button class="like-btn" onclick="likePost(this)">Like (<span class="like-count">0</span>)</button>
+                    <button class="comment-btn" onclick="toggleComments(this)">Comment</button>
+                    <button class="share-btn" onclick="sharePost(this)">Share</button>
+                </div>
+                <div class="post-comments hidden">
+                    <div class="comment-list">
+                        <!-- Comments will be added dynamically here -->
+                    </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button class="post-comment-btn" onclick="postComment(this)">Post Comment</button>
+                </div>
+            </div>
+            <!-- Example Post 2 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="img.jpg" alt="User" class="post-user-picture" onclick="showProfile()">
+                    <span class="post-user-name" onclick="showProfile()">Mohit Patil</span>
+                </div>
+                <img src="img3.jpg" alt="Post Image" class="post-image">
+                <div class="post-actions">
+                    <button class="like-btn" onclick="likePost(this)">Like (<span class="like-count">0</span>)</button>
+                    <button class="comment-btn" onclick="toggleComments(this)">Comment</button>
+                    <button class="share-btn" onclick="sharePost(this)">Share</button>
+                </div>
+                <div class="post-comments hidden">
+                    <div class="comment-list">
+                        <!-- Comments will be added dynamically here -->
+                    </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button class="post-comment-btn" onclick="postComment(this)">Post Comment</button>
+                </div>
+            </div>
+            <!-- Example Post 3 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="img.jpg" alt="User" class="post-user-picture" onclick="showProfile()">
+                    <span class="post-user-name" onclick="showProfile()">Mohit Patil</span>
+                </div>
+                <img src="img4.jpg" alt="Post Image" class="post-image">
+                <div class="post-actions">
+                    <button class="like-btn" onclick="likePost(this)">Like (<span class="like-count">0</span>)</button>
+                    <button class="comment-btn" onclick="toggleComments(this)">Comment</button>
+                    <button class="share-btn" onclick="sharePost(this)">Share</button>
+                </div>
+                <div class="post-comments hidden">
+                    <div class="comment-list">
+                        <!-- Comments will be added dynamically here -->
+                    </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button class="post-comment-btn" onclick="postComment(this)">Post Comment</button>
+                </div>
+            </div>
+
+            <!-- Example Post 4 -->
+         <div class="post">
+         <div class="post-header">
+        <img src="img.jpg" alt="User" class="post-user-picture" onclick="showProfile()">
+        <span class="post-user-name" onclick="showProfile()">Mohit Patil</span>
+    </div>
+    <img src="img7.jpg" alt="Post Image" class="post-image">
+    <div class="post-actions">
+        <button class="like-btn" onclick="likePost(this)">Like (<span class="like-count">0</span>)</button>
+        <button class="comment-btn" onclick="toggleComments(this)">Comment</button>
+        <button class="share-btn" onclick="sharePost(this)">Share</button>
+    </div>
+    <div class="post-comments hidden">
+        <div class="comment-list">
+            <!-- Comments will be added dynamically here -->
+        </div>
+        <input type="text" class="comment-input" placeholder="Add a comment...">
+        <button class="post-comment-btn" onclick="postComment(this)">Post Comment</button>
+    </div>
+</div>
+<div class="post">
+    <div class="post-header">
+        <img src="img.jpg" alt="User" class="post-user-picture" onclick="showProfile()">
+        <span class="post-user-name" onclick="showProfile()">Mohit Patil</span>
+    </div>
+    <img src="img8.jpg" alt="Post Image" class="post-image">
+    <div class="post-actions">
+        <button class="like-btn" onclick="likePost(this)">Like (<span class="like-count">0</span>)</button>
+        <button class="comment-btn" onclick="toggleComments(this)">Comment</button>
+        <button class="share-btn" onclick="sharePost(this)">Share</button>
+    </div>
+    <div class="post-comments hidden">
+        <div class="comment-list">
+            <!-- Comments will be added dynamically here -->
+        </div>
+        <input type="text" class="comment-input" placeholder="Add a comment...">
+        <button class="post-comment-btn" onclick="postComment(this)">Post Comment</button>
+    </div>
+</div>
+
+<!-- Example Post 5 -->
+<div class="post">
+    <div class="post-header">
+        <img src="img.jpg" alt="User" class="post-user-picture" onclick="showProfile()">
+        <span class="post-user-name" onclick="showProfile()">Mohit Patil</span>
+    </div>
+    <img src="img2.jpg" alt="Post Image" class="post-image">
+    <div class="post-actions">
+        <button class="like-btn" onclick="likePost(this)">Like (<span class="like-count">0</span>)</button>
+        <button class="comment-btn" onclick="toggleComments(this)">Comment</button>
+        <button class="share-btn" onclick="sharePost(this)">Share</button>
+    </div>
+    <div class="post-comments hidden">
+        <div class="comment-list">
+            <!-- Comments will be added dynamically here -->
+        </div>
+        <input type="text" class="comment-input" placeholder="Add a comment...">
+        <button class="post-comment-btn" onclick="postComment(this)">Post Comment</button>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <div id="notifications-section" class="section hidden">
+        <h2>Notifications</h2>
+        <div class="notifications-list">
+            <!-- Notifications will be added dynamically here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
